@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   return (
     <>
-     <h1 className='text-4xl'>Nando</h1>
+     <h1 className='text-4xl'>Nando rms</h1>
     </>
   )
 }
