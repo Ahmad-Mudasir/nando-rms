@@ -1,0 +1,12 @@
+# Ignore frontend node_modules
+client/frontend/node_modules/
+
+# Ignore backend node_modules
+server/node_modules/
+
+# Ignore other common files
+dist/
+build/
+*.log
+*.env
+.DS_Store
