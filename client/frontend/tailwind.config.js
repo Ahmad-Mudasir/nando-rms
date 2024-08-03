@@ -2,7 +2,17 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      listStyleImage: {
+        home: 'url("../assets/images/home.png")',
+      },
+      colors:{
+        'red':'#EE3A43',
+      },
+      fontFamily: {
+        fredoka: ['Fredoka', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
