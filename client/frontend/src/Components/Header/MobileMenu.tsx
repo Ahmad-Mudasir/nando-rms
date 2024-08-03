@@ -8,7 +8,7 @@ const MobileMenu = () => {
 <div className="flex flex-col gap-1 cursor-pointer transition-all ease-in-out duration-700" onClick={() => setisOpen((prev) => !prev)}>
         <div className={`bg-gray-700 w-6 h-1 rounded-md ${isOpen ? "rotate-45" : " "} origin-left transition-all ease-in-out duration-700`}></div>
         <div className={`bg-gray-700 w-4 h-1 rounded-md ${isOpen ? "opacity-0" : " "}`}></div>
-        <div className={`bg-gray-700 w-6 h-1 rounded-md ${isOpen ? "-rotate-45" : "no"} origin-left transition duration-300 ease-in-out transition-all ease-in-out duration-700`}></div>
+        <div className={`bg-gray-700 w-6 h-1 rounded-md ${isOpen ? "-rotate-45" : " "} origin-left transition duration-300 ease-in-out transition-all ease-in-out duration-700`}></div>
 
         {
           isOpen &&(

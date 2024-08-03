@@ -8,7 +8,10 @@ export default {
       },
       colors:{
         'red':'#EE3A43',
-      }
+      },
+      fontFamily: {
+        fredoka: ['Fredoka', 'sans-serif'],
+      },
     },
   },
   plugins: [],

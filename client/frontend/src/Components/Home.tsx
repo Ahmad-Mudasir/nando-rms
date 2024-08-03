@@ -1,32 +1,61 @@
-
-
-//import '/src/assets/images/home.png';
+import Category from "./Food-Menu/Category";
+import StarRating from "./StarRating";
 
 const Home = () => {
   return (
     <>
-    <div className="lg:pt-[150px] pt-[60px] bg-[url('/src/assets/images/home.png')]  h-[710px] bg-no-repeat  w-full bg-contain">
-         <div>
-          <div className="md:container px-5 mx-auto text-white ">
-            <div className="flex justify-between mb-20">
-              {/* for left side  */}
-              <div className="text-white lg::w-1/2 w-full ">
-                 <h1 className="lg:text-[60px] md:text-[45px] text-[25px] font-medium font-[sans-serif]">The Perfect Space to </h1>
-                 <h1 className="lg:text-[60px] md:text-[45px] text-[25px] font-medium font-[sans-serif]">Enjoy Fantastic Food</h1>
-     <p className="text[#FFFFFF] lg:text-[20px] text-sm font-normal pt-5 lg::w-full w-1/2 ">Festive dining at Farthings where we are strong believers inusing the very best produce</p>
+      <div className="lg:pt-[150px] md:pt-[60px] pt-[90px] bg-[url('/src/assets/images/home.png')] bg-cover bg-center h-auto min-h-[600px] w-full">
+        <div>
+          <div className="container px-5 mx-auto text-white">
+            <div className="flex flex-col lg:flex-row justify-between mb-20">
+              {/* Left side */}
+              <div className="text-white lg:w-1/2 w-full">
+                <h1 className=" md:text-[60px] text-[40px] font-[900] size[48px] font-fredoka">
+                  The Perfect Space to
+                </h1>
+                <h1 className=" md:text-[60px] text-[40px] font-[900] size[48px] font-fredoka">
+                  Enjoy Fantastic Food
+                </h1>
+                <p className="text-[#FFFFFF] text-[20px] font-normal pt-5  w-full">
+                  Festive dining at Farthings where we are strong believers in
+                  using the very best produce
+                </p>
               </div>
-              {/* for right side  */}
-               <div className="relative">
-               <div className="bg-white h-40 w-40  text-white absolute -left-20 top-20">right</div>
-               </div>
+              {/* Right side */}
+              <div className="relative mt-14 lg:mt-52 lg:w-1/2 w-full flex justify-end">
+                <div className="bg-[#000000] h-[160px] lg:h-[192px] lg:w-[399.22px] w-[360px]  text-white rounded-[30px] border-[#FFD40D] border-4 opacity-85 flex  justify-between px-6">
+                  {/* left section in right box */}
+                  <div className="flex flex-col top-[46.17px] relative gap-2">
+                    <h1 className="font-[900] size[48px] font-fredoka">
+                      <span className="text-red">$</span>99
+                    </h1>
+                    <h1 className="font-[900] size[22px] font-fredoka">
+                      Special Pizza
+                    </h1>
+                    <div className="flex">
+                      <StarRating />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center">
+                    <img
+                      className=" lg:h-[150px] h-[130px] top-[21px]"
+                      src="/src/assets/images/pizza.png"
+                      alt="pizza"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-       </div>
-       </div>
+        </div>
+      </div>
+      {/* Category and food item section */}
+      <div>
+        <Category />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
-
-
+export default Home;

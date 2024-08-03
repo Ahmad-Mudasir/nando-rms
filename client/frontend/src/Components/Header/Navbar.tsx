@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
-import MobileMenu from "../../Components/Header/MobileMenu"
+import MobileMenu from "../../Components/Header/MobileMenu";
 const Navbar = () => {
   return (
-    <div className="lg:py-8 py-5 bg-[#d2cbcb] top-0 sticky">
+    <div className="lg:py-8 py-5 bg-[#d2cbcb] top-0 sticky z-50">
       <div className="md:container mx-auto px-5">
         {/* parent div  */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-around items-center">
           {/* for  logo */}
           <div>
-            <Link to="/" className="text-lg  text-red font-medium ">
+            <Link
+              to="/"
+              className="text-lg  text-red font-[900] size[48px] font-fredoka "
+            >
               Nando
             </Link>
           </div>
@@ -19,7 +22,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="size[18px] font-medium text[#212121] capitalize"
+                className="font-[900] size[48px] font-fredoka text[#212121] capitalize"
               >
                 Home
               </Link>
@@ -27,7 +30,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/About"
-                className="size[18px] font-medium text[#212121] capitalize"
+                className="font-[900] size[48px] font-fredoka text[#212121] capitalize"
               >
                 About Us
               </Link>
@@ -36,7 +39,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/Contact"
-                className="size[18px] font-medium text[#212121] capitalize"
+                className="font-[900] size[48px] font-fredoka text[#212121] capitalize"
               >
                 contact
               </Link>
@@ -51,7 +54,6 @@ const Navbar = () => {
               </span>
               <div className="absolute -top-4 left-3 w-5 h-5 bg-black rounded-full flex items-center justify-center">
                 <h6 className="text-white">0</h6>
-                
               </div>
             </div>
           </div>
@@ -59,7 +61,6 @@ const Navbar = () => {
           <div className="md:hidden flex">
             <MobileMenu />
           </div>
-
         </div>
       </div>
     </div>
