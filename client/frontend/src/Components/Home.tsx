@@ -1,6 +1,8 @@
 import Category from "./Food-Menu/Category";
 import StarRating from "./StarRating";
-
+import FeaturedDishes from "../Components/FeaturedDishes";
+import Images from "./Images";
+import Footer from "./Footer";
 const Home = () => {
   return (
     <>
@@ -53,6 +55,20 @@ const Home = () => {
       {/* Category and food item section */}
       <div>
         <Category />
+      </div>
+      {/* FeaturedDishes section */}
+      <div className="container mx-auto pl-12 pr-12   bg-[#F5F8FD] max-w-[1900px]  min-h-[520px]   ">
+        <FeaturedDishes />
+      </div>
+
+      {/* images section */}
+      <div className="mt-12">
+        <Images />
+      </div>
+
+      {/* Footer section */}
+      <div>
+        <Footer />
       </div>
     </>
   );

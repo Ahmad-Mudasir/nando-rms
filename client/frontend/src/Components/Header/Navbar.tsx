@@ -1,9 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import MobileMenu from "../../Components/Header/MobileMenu";
+import { useCart } from "../../context/CartContext";
+import { useState, useEffect } from "react";
+
 const Navbar = () => {
+  const { cart } = useCart();
+
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(location.pathname);
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
   return (
-    <div className="lg:py-8 py-5 bg-[#d2cbcb] top-0 sticky z-50">
+    <div className="lg:py-8 py-5 bg-[#f25555] top-0 sticky z-50">
       <div className="md:container mx-auto px-5">
         {/* parent div  */}
         <div className="flex justify-around items-center">
@@ -11,7 +22,7 @@ const Navbar = () => {
           <div>
             <Link
               to="/"
-              className="text-lg  text-red font-[900] size[48px] font-fredoka "
+              className="text-lg  text-white font-[900] size[48px] font-fredoka "
             >
               Nando
             </Link>
@@ -22,7 +33,8 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="font-[900] size[48px] font-fredoka text[#212121] capitalize"
+                className={`font-[900] size[48px] font-fredoka text[#212121] capitalize  hover:text-white transition-all ease-in-out duration-200 ${activeLink === '/' ? 'text-white' : 'text-[#212121]'}`}
+                onClick={() => setActiveLink('/')}
               >
                 Home
               </Link>
@@ -30,7 +42,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/About"
-                className="font-[900] size[48px] font-fredoka text[#212121] capitalize"
+                className={`font-[900] size[48px] font-fredoka text[#212121] capitalize  hover:text-white transition-all ease-in-out duration-200 ${activeLink === '/About' ? 'text-white' : 'text-[#212121]'}`}
+                onClick={() => setActiveLink('About')}
+              
               >
                 About Us
               </Link>
@@ -39,7 +53,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/Contact"
-                className="font-[900] size[48px] font-fredoka text[#212121] capitalize"
+                className={`font-[900] size[48px] font-fredoka text[#212121] capitalize  hover:text-white transition-all ease-in-out duration-200 ${activeLink === '/Contact' ? 'text-white' : 'text-[#212121]'}`}
+                onClick={() => setActiveLink('Contact')}
+              
               >
                 contact
               </Link>
@@ -50,10 +66,12 @@ const Navbar = () => {
           <div className="">
             <div className="flex relative">
               <span>
-                <FaShoppingBasket className="text-green-500" />
+                <Link to="cart">
+                  <FaShoppingBasket className="text-green-500" />
+                </Link>
               </span>
               <div className="absolute -top-4 left-3 w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                <h6 className="text-white">0</h6>
+                <h6 className="text-white">{cart.length}</h6>
               </div>
             </div>
           </div>
