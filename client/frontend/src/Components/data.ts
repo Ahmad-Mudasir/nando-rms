@@ -5,7 +5,7 @@ export const data = [
       category: 'burger',
       image:
         'https://images.unsplash.com/photo-1607013251379-e6eecfffe234?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60',
-      price: '$20',
+      price:"20",
     },
     {
       id: 2,
@@ -13,7 +13,7 @@ export const data = [
       category: 'burger',
       image:
         'https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1cmdlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60',
-      price: '$15',
+      price: '15',
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ export const data = [
       category: 'burger',
       image:
         'https://images.unsplash.com/photo-1608767221051-2b9d18f35a2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1cmdlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60',
-      price: '$12',
+      price: '12',
     },
     {
       id: 4,
@@ -29,7 +29,7 @@ export const data = [
       category: 'burger',
       image:
         'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60',
-      price: '$14',
+      price: '14',
     },
     {
       id: 5,
@@ -69,7 +69,7 @@ export const data = [
       category: 'salad',
       image:
         'https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2FsYWQlMjBjZWFzYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-      price: '$2',
+      price: '2',
     },
     {
       id: 10,
@@ -77,7 +77,7 @@ export const data = [
       category: 'salad',
       image:
         'https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2FsYWQlMjBjZWFzYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-      price: '$3',
+      price: '3',
     },
     {
       id: 11,
@@ -85,7 +85,7 @@ export const data = [
       category: 'salad',
       image:
         'https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2FsYWR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-      price: '$4',
+      price: '4',
     },
     {
       id: 12,
@@ -128,3 +128,31 @@ export const data = [
       price: '12',
     },
   ];
+
+
+  // src/data.ts
+
+export const featuredDishes = [
+    {
+      id: 1,
+      name: 'Crispy Chicken',
+      image: '/src/assets/images/crispychicken.png',
+      previousPrice: '$15.99',
+      salePrice: '12.99',
+    },
+    {
+      id: 2,
+      name: 'Bacon Burger',
+      image: '/src/assets/images/baconBurger.png',
+      previousPrice: '$10.99',
+      salePrice: '8.99',
+    },
+    {
+      id: 3,
+      name: ' Black Coffe',
+      image: '/src/assets/images/coffe.png',
+      previousPrice: '$18.99',
+      salePrice: '15.99',
+    },
+  ];
+  
