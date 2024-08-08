@@ -1,4 +1,4 @@
-import Category from "./Food-Menu/Category";
+import Category from "./Category";
 import StarRating from "./StarRating";
 import FeaturedDishes from "../Components/FeaturedDishes";
 import Images from "./Images";

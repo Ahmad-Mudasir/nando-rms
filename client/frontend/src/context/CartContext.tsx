@@ -1,7 +1,7 @@
 import React, { createContext, useState, ReactNode, useContext } from "react";
 
 export interface CartItem {
-  id: string;
+  _id: string;
   name: string;
   price: number;
   image: string;
@@ -28,10 +28,10 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   const addToCart = (item: Omit<CartItem, "quantity">) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+      const existingItem = prevCart.find((cartItem) => cartItem._id === item._id);
       if (existingItem) {
         return prevCart.map((cartItem) =>
-          cartItem.id === item.id
+          cartItem._id === item._id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         );
@@ -42,12 +42,12 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const removeFromCart = (id: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    setCart((prevCart) => prevCart.filter((item) => item._id !== id));
   };
 
   const clearCart = () => setCart([]); // Implement clearCart function
   return (
-    <CartContext.Provider value={{ cart, addToCart,clearCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, clearCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
