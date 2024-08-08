@@ -1,7 +1,7 @@
 import React, { createContext, useState, ReactNode, useContext } from "react";
 
 export interface CartItem {
-  id: number;
+  id: string;
   name: string;
   price: number;
   image: string;
@@ -11,7 +11,7 @@ export interface CartItem {
 interface CartContextType {
   cart: CartItem[];
   addToCart: (item: Omit<CartItem, "quantity">) => void;
-  removeFromCart: (id: number) => void;
+  removeFromCart: (id: string) => void;
   clearCart: () => void; // Add clearCart function
 }
 
@@ -41,7 +41,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     });
   };
 
-  const removeFromCart = (id: number) => {
+  const removeFromCart = (id: string) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 

@@ -3,6 +3,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 import MobileMenu from "../../Components/Header/MobileMenu";
 import { useCart } from "../../context/CartContext";
 import { useState, useEffect } from "react";
+import  logo  from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const { cart } = useCart();
@@ -14,7 +15,7 @@ const Navbar = () => {
     setActiveLink(location.pathname);
   }, [location]);
   return (
-    <div className="lg:py-8 py-5 bg-[#f25555] top-0 sticky z-50">
+    <div className="lg:py-8 py-5 bg-red   top-0 sticky z-50">
       <div className="md:container mx-auto px-5">
         {/* parent div  */}
         <div className="flex justify-around items-center">
@@ -22,9 +23,12 @@ const Navbar = () => {
           <div>
             <Link
               to="/"
-              className="text-lg  text-white font-[900] size[48px] font-fredoka "
+              className="text-lg  text-white font-[900] size[48px] font-fredoka flex justify-center items-center gap-3 hover:scale-[1.1] "
             >
+              <img src={logo} alt="" className="h-10 w-auto"/>
+              <p className="text-headingColor md:text-lg lg:text-xl font-bold">
               Nando
+            </p>
             </Link>
           </div>
 
