@@ -2,21 +2,18 @@ import FoodItems from "../FoodItems.tsx";
 import { useMenuItems } from "../hooks/useMenuItems.ts";
 import { CATEGORIES } from "../config.ts";
 
-
 const Category: React.FC = () => {
-
   const { filteredItems, category, setSelectedCategory } = useMenuItems();
 
   return (
     <div id="category-section">
-      
-      <div className="flex justify-center items-center">
-        <div className="grid grid-cols-1 md:grid-cols-8 gap-4 mt-5">
-        {CATEGORIES.map((cat) => (
+      <div className="flex justify-center items-center overflow-hidden p-6">
+        <div className="flex gap-4 mt-5 overflow-x-auto no-scrollbar hide-scroll-bar">
+          {CATEGORIES.map((cat) => (
             <button
               key={cat.name}
               onClick={() => setSelectedCategory(cat.name)}
-              className={`w-[150px] h-[150px] rounded-[20px] border-[#E4E4E4] border-4 hover:border-red ${
+              className={`flex-shrink-0 w-[150px] h-[150px] rounded-[20px] border-[#E4E4E4] border-4 hover:border-red ${
                 category === cat.name
                   ? "bg-red border-red rounded-b-[55px]"
                   : "bg-white"
@@ -28,15 +25,17 @@ const Category: React.FC = () => {
                     category === cat.name ? "text-white" : "text-red"
                   }`}
                 />
-                <h1 className="font-[900] size[48px] font-fredoka">{cat.name}</h1>
+                <h1 className="font-[900] size[48px] font-fredoka">
+                  {cat.name}
+                </h1>
               </div>
             </button>
           ))}
         </div>
       </div>
-      { filteredItems?.length > 0 && <FoodItems menuItems={filteredItems}/> }
+      {filteredItems?.length > 0 && <FoodItems menuItems={filteredItems} />}
     </div>
   );
-}
+};
 
 export default Category;

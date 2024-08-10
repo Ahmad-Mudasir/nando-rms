@@ -8,7 +8,7 @@ type Props = {
   menuItems: MenuItem[];
 };
 
-const getQuantity = (cart: CartItem[], id: string) => {
+const getQuantity = (cart: CartItem[], id: number) => {
   const item = cart.find((cartItem) => cartItem._id === id);
   return item ? item.quantity : 0;
 };

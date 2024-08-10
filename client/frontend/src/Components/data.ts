@@ -138,21 +138,21 @@ export const featuredDishes = [
       name: 'Crispy Chicken',
       image: '/src/assets/images/crispychicken.png',
       previousPrice: '$15.99',
-      salePrice: '12.99',
+      salePrice: 12.99,
     },
     {
       id: 2,
       name: 'Bacon Burger',
       image: '/src/assets/images/baconBurger.png',
-      previousPrice: '$10.99',
-      salePrice: '8.99',
+      previousPrice: "$10.99",
+      salePrice: 8.99,
     },
     {
       id: 3,
       name: ' Black Coffe',
       image: '/src/assets/images/coffe.png',
-      previousPrice: '$18.99',
-      salePrice: '15.99',
+      previousPrice:  "$18.99",
+      salePrice: 15.99,
     },
   ];
   

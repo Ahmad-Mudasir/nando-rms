@@ -9,6 +9,11 @@ const Cart: React.FC = () => {
   const [orderPlaced, setOrderPlaced] = useState<boolean>(false);
   const { clearCart } = useCart();
 
+  // Calculate the subtotal
+  const calculateSubtotal = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+  };
+
   const handleOrder = () => {
     if (tableNumber.trim() !== "" && !isNaN(Number(tableNumber))) {
       setOrderMessage(`Your table no ${tableNumber} order has been placed.`);
@@ -32,14 +37,16 @@ const Cart: React.FC = () => {
         <div className="grid grid-cols-1   gap-4">
           {cart.map((item) => (
             <div
-              key={item.id}
+              key={item._id}
               className="rounded-[15px] rounded-l-none h-[135px] flex border shadow-lg p-2 hover:border-red duration-300 relative"
             >
+              
               <img
                 src={item.image}
-                alt=""
+                alt="image"
                 className="w-1/4 h-4/4 object-cover"
               />
+              
               {/* text content div */}
               <div className="grid md:grid-cols-4 grid-cols-3 gap-8  md:gap-20 justify-center items-center px-4 relative bottom-2">
                 <div className="flex  flex-col">
@@ -75,7 +82,7 @@ const Cart: React.FC = () => {
                 </div>
               </div>
               <button
-                onClick={() => removeFromCart(item.id)}
+                onClick={() => removeFromCart(item._id)}
                 className="w-[30px] h-[30px] rounded-[7px] bg-red-500 text-red flex justify-center items-center absolute right-4 bottom-1 cursor-pointer "
               >
                 <MdDelete className="size-20" />
@@ -86,6 +93,7 @@ const Cart: React.FC = () => {
       )}
       {cart.length > 0 && !orderPlaced && (
         <div className="mt-4">
+          <h3 className="text-xl font-bold">Subtotal: ${calculateSubtotal()}</h3>
           <input
             type="text"
             value={tableNumber}
