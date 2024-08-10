@@ -7,6 +7,7 @@ import About  from './Components/About'
 import Contact from './Components/Contact'
 import { CartProvider } from './context/CartContext';
 import Cart from './Components/Cart'
+import MyOrders from './Components/MyOrders'
 function App() {
   return (
     
@@ -17,6 +18,7 @@ function App() {
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />}/>
+      <Route path="/orders" element={<MyOrders/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/cart" element={<Cart/>}/>

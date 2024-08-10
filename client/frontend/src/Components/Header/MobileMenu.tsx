@@ -47,6 +47,17 @@ const MobileMenu = () => {
               </li>
               <li>
                 <Link
+                  to="/orders"
+                  className={`font-[900] size[48px] font-fredoka text[#212121]  capitalize hover:text-white transition-all ease-in-out duration-200 ${
+                    activeLink === "/orders" ? "text-white" : "text-[#212121]"
+                  } `}
+                  onClick={() => setActiveLink("/orders")}
+                >
+                  My Orders
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="About"
                   className={`font-[900] size[48px] font-fredoka text[#212121] capitalize  hover:text-white transition-all ease-in-out duration-200 ${
                     activeLink === "/About" ? "text-white" : "text-[#212121]"
