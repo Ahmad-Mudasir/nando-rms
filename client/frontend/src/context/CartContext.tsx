@@ -1,4 +1,5 @@
 import React, { createContext, useState, ReactNode, useContext } from "react";
+import { API_URL } from "../config";
 //import { MenuItem } from "../types";
 
 export interface CartItem {
@@ -29,7 +30,7 @@ interface CartProviderProps {
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (item: Omit<CartItem, "quantity">) => {
+  const addToCart = async (item: Omit<CartItem, "quantity">) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem._id === item._id);
       if (existingItem) {
@@ -42,9 +43,36 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         return [...prevCart, { ...item, quantity: 1 }];
       }
     });
+
+    const token = localStorage.getItem('token');
+
+    await fetch(API_URL + 'api/cart/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': token as string,
+      },
+      body: JSON.stringify({
+        "itemId": item._id,
+      })
+    });
+
   };
 
-  const removeFromCart = (id: number) => {
+  const removeFromCart = async (id: number) => {
+
+    const token = localStorage.getItem('token');
+
+    await fetch(API_URL + 'api/cart/remove', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': token as string,
+      },
+      body: JSON.stringify({
+        "itemId": id,
+      })
+    });
     setCart((prevCart) => prevCart.filter((item) => item._id !== id));
   };
 

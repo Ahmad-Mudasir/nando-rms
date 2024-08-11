@@ -5,3 +5,17 @@ export type MenuItem = {
     price:number,
     category:string,
 }
+
+export type MenuItemWithQuantity = MenuItem & { quantity: number };
+
+export type CartItem = {
+    [key: string]: number;
+}
+
+export type OrderDetails = {
+    items: MenuItemWithQuantity[];
+    amount: number;
+    payment: boolean;
+    tableNo: number;
+    status?: string;
+};

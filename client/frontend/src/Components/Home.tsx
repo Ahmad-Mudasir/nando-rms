@@ -3,8 +3,49 @@ import StarRating from "./StarRating";
 import FeaturedDishes from "../Components/FeaturedDishes";
 import Images from "./Images";
 import Footer from "./Footer";
+import { useEffect } from "react";
+import { API_URL } from "../config";
 
 const Home = () => {
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+    
+        if (!token) {
+
+            const generateRandomString = (length: number) => {
+                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                let result = '';
+                const charactersLength = characters.length;
+                for (let i = 0; i < length; i++) {
+                  result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                }
+                return result;
+            };
+
+            fetch(API_URL + 'api/user/register', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                name: generateRandomString(10), 
+                email: `${generateRandomString(10)}@gmail.com`,
+                password: 'nando-rms',
+              })
+            })
+            .then(response => response.json())
+            .then(data => {
+              const { token } = data;
+              if (token) {
+                localStorage.setItem('token', token);
+              }
+            })
+            .catch(error => {
+              console.error('Error creating dummy user:', error);
+            });
+        }
+      }, []);
 
 
 
