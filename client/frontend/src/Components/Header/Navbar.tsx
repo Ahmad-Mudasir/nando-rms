@@ -15,7 +15,7 @@ const Navbar = () => {
     setActiveLink(location.pathname);
   }, [location]);
   return (
-    <div className="lg:py-8 py-5 bg-red   top-0 sticky z-50">
+    <div className="lg:py-4 py-5 bg-red   top-0 sticky z-50">
       <div className="md:container mx-auto px-5">
         {/* parent div  */}
         <div className="flex justify-around items-center">

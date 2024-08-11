@@ -22,6 +22,7 @@ const Cart: React.FC = () => {
 
   const removeItem = (id: number) => {
     setCartItems((prevItems) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { [id]: _, ...updatedItems } = prevItems;
       return updatedItems;
     });
